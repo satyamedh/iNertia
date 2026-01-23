@@ -6,8 +6,7 @@
 #define INERTIA_PRECISION_H
 #include "fix.h"
 
-typedef float real; // switch to Fix<8, int32_t> if and when vog allows
-
-
-
+namespace iNertia {
+    typedef float real; // switch to Fix<8, int32_t> if and when vog allows
+}
 #endif //INERTIA_PRECISION_H
