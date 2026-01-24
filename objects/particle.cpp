@@ -4,6 +4,7 @@
 
 #include "particle.h"
 
+#include <cassert>
 #include <stdexcept>
 
 namespace iNertia {
@@ -28,5 +29,20 @@ namespace iNertia {
 
     real particle::getInverseMass() const {
         return this->inverseMass;
+    }
+
+    void particle::integrate(real dt) {
+        assert(dt > static_cast<real>(0)); // no going back in time :D
+
+        this->position.addScaledVector(this->velocity, dt); // s1 = s0 + ut
+
+        Vector3 resultingAcc = acceleration;
+        resultingAcc.addScaledVector(this->forceAccum, this->inverseMass); // a = F/m
+
+        this->velocity.addScaledVector(resultingAcc, dt); // v1 = v0 + at
+
+        velocity *= real_pow(damping, dt); // apply damping/drag/friction
+
+
     }
 }

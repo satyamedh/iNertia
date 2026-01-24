@@ -15,6 +15,8 @@ namespace iNertia {
         Vector3 velocity;
         Vector3 acceleration;
 
+        Vector3 forceAccum; // total accumulated force for this update
+
         real damping;
 
         void setMass(real mass);
@@ -22,6 +24,9 @@ namespace iNertia {
 
         real getMass() const;
         real getInverseMass() const;
+
+
+        void integrate(real dt);
     protected:
         real inverseMass = 0;
     };

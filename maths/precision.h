@@ -7,6 +7,7 @@
 #include "fix.h"
 
 #define real_sqrt std::sqrtf // will need to fixed-point sqrt implementation later when *optimizing*
+#define real_pow std::powf // same as above
 
 namespace iNertia {
     typedef float real; // switch to Fix<8, int32_t> if and when vog allows
