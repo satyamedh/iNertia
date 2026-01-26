@@ -12,4 +12,6 @@ add_library(iNertia STATIC iNertia.cpp
         phsyics/helpers/particleForceGen.h
         phsyics/helpers/particleForceRegistry/particleForceRegistry.cpp
         phsyics/helpers/particleForceRegistry/particleForceRegistry.h
+        phsyics/helpers/ForceTypes/Particle/ParticleGravity.cpp
+        phsyics/helpers/ForceTypes/Particle/ParticleGravity.h
 )
