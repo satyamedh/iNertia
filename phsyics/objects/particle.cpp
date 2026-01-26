@@ -2,7 +2,7 @@
 // Created by satyamedh on 24/01/26.
 //
 
-#include "particle.h"
+#include "../particle.h"
 
 #include <cassert>
 #include <stdexcept>

@@ -7,6 +7,6 @@ add_library(iNertia STATIC iNertia.cpp
         maths/fix.h
         maths/precision.h
         maths/Vector3.h
-        phsyics/particle.cpp
-        phsyics/particle.h
+        phsyics/objects/particle.cpp
+        phsyics/objects/particle.h
 )
