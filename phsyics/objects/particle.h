@@ -28,6 +28,8 @@ namespace iNertia {
         real getMass() const;
         real getInverseMass() const;
 
+        bool hasFiniteMass() const { return inverseMass > 0; }
+
 
         void integrate(real dt);
     protected:
