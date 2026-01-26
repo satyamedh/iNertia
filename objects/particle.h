@@ -16,6 +16,9 @@ namespace iNertia {
         Vector3 acceleration;
 
         Vector3 forceAccum; // total accumulated force for this update
+        void clearAccumulator();
+
+        void addForce(const Vector3& force);
 
         real damping;
 

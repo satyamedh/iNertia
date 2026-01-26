@@ -8,6 +8,14 @@
 #include <stdexcept>
 
 namespace iNertia {
+    void particle::clearAccumulator() {
+        this->forceAccum.clear();
+    }
+
+    void particle::addForce(const Vector3 &force) {
+        this->forceAccum += force;
+    }
+
     void particle::setMass(const real mass) {
         if (mass != 0) {
             this->inverseMass = static_cast<real>(1.0f) / mass; // static cast may be redundant now, but if switching to fixed-point later, will be needed
