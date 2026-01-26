@@ -7,9 +7,9 @@
 #include "../../maths/Vector3.h"
 
 namespace iNertia {
-    class particle {
+    class Particle {
     public:
-        particle () : damping(1.0f) {}
+        Particle () : damping(1.0f) {}
 
         Vector3 position;
         Vector3 velocity;

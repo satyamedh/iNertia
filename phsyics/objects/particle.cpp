@@ -2,44 +2,44 @@
 // Created by satyamedh on 24/01/26.
 //
 
-#include "../particle.h"
+#include "particle.h"
 
 #include <cassert>
 #include <stdexcept>
 
 namespace iNertia {
-    void particle::clearAccumulator() {
+    void Particle::clearAccumulator() {
         this->forceAccum.clear();
     }
 
-    void particle::addForce(const Vector3 &force) {
+    void Particle::addForce(const Vector3 &force) {
         this->forceAccum += force;
     }
 
-    void particle::setMass(const real mass) {
+    void Particle::setMass(const real mass) {
         if (mass != 0) {
             this->inverseMass = static_cast<real>(1.0f) / mass; // static cast may be redundant now, but if switching to fixed-point later, will be needed
         } else {
-            throw std::runtime_error("particle::setMass(): mass cannot be zero");
+            throw std::runtime_error("Particle::setMass(): mass cannot be zero");
         }
     }
 
-    void particle::setInverseMass(const real inverse_mass) {
+    void Particle::setInverseMass(const real inverse_mass) {
         this->inverseMass = inverse_mass;
     }
 
-    real particle::getMass() const {
+    real Particle::getMass() const {
         if (this->inverseMass == 0) {
-            throw std::runtime_error("particle::getMass(): infinite mass (inverse mass is zero)");
+            throw std::runtime_error("Particle::getMass(): infinite mass (inverse mass is zero)");
         }
         return static_cast<real>(1.0f) / this->inverseMass;
     }
 
-    real particle::getInverseMass() const {
+    real Particle::getInverseMass() const {
         return this->inverseMass;
     }
 
-    void particle::integrate(real dt) {
+    void Particle::integrate(const real dt) {
         assert(dt > static_cast<real>(0)); // no going back in time :D
 
         this->position.addScaledVector(this->velocity, dt); // s1 = s0 + ut
