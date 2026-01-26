@@ -10,6 +10,6 @@
 #define real_pow std::powf // same as above
 
 namespace iNertia {
-    typedef float real; // switch to Fix<8, int32_t> if and when vog allows
+    typedef float real; // switch to Fix<8, int32_t> after implementing LUT-based sqrt and fast pow.
 }
 #endif //INERTIA_PRECISION_H
