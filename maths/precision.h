@@ -8,6 +8,7 @@
 
 #define real_sqrt std::sqrtf // will need to fixed-point sqrt implementation later when *optimizing*
 #define real_pow std::powf // same as above
+#define real_abs std::fabsf // same as above
 
 namespace iNertia {
     typedef float real; // switch to Fix<8, int32_t> after implementing LUT-based sqrt and fast pow.
