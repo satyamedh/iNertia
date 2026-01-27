@@ -11,9 +11,14 @@ namespace iNertia {
     public:
         Particle () : damping(1.0f) {}
 
-        Vector3 position;
-        Vector3 velocity;
-        Vector3 acceleration;
+        void setPosition(const Vector3& newPosition);
+        Vector3 getPosition() const;
+
+        void setVelocity(const Vector3& newVelocity);
+        Vector3 getVelocity() const;
+
+        void setAcceleration(const Vector3& newAcceleration);
+        Vector3 getAcceleration() const;
 
         Vector3 forceAccum; // total accumulated force for this update
         void clearAccumulator();
@@ -33,6 +38,11 @@ namespace iNertia {
 
         void integrate(real dt);
     protected:
+
+        Vector3 position;
+        Vector3 velocity;
+        Vector3 acceleration;
+
         real inverseMass = 0;
     };
 }

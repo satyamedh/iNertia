@@ -8,6 +8,30 @@
 #include <stdexcept>
 
 namespace iNertia {
+    void Particle::setPosition(const Vector3 &newPosition) {
+        this->position = newPosition;
+    }
+
+    Vector3 Particle::getPosition() const {
+        return this->position;
+    }
+
+    void Particle::setVelocity(const Vector3 &newVelocity) {
+        this->velocity = newVelocity;
+    }
+
+    Vector3 Particle::getVelocity() const {
+        return this->velocity;
+    }
+
+    void Particle::setAcceleration(const Vector3 &newAcceleration) {
+        this->acceleration = newAcceleration;
+    }
+
+    Vector3 Particle::getAcceleration() const {
+        return this->acceleration;
+    }
+
     void Particle::clearAccumulator() {
         this->forceAccum.clear();
     }
