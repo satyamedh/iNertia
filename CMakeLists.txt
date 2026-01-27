@@ -18,4 +18,8 @@ add_library(iNertia STATIC iNertia.cpp
         phsyics/helpers/ForceTypes/Particle/ParticleDrag.h
         phsyics/helpers/ForceTypes/Particle/ParticleSpring.cpp
         phsyics/helpers/ForceTypes/Particle/ParticleSpring.h
+        phsyics/helpers/ForceTypes/Particle/ParticleAnchoredSpring.cpp
+        phsyics/helpers/ForceTypes/Particle/ParticleAnchoredSpring.h
+        phsyics/helpers/ForceTypes/Particle/ParticleBungee.cpp
+        phsyics/helpers/ForceTypes/Particle/ParticleBungee.h
 )
