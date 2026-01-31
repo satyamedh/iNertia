@@ -12,7 +12,7 @@ iNertia::ParticleBuoyancy::ParticleBuoyancy(const real maxDepth, const real volu
 }
 
 void iNertia::ParticleBuoyancy::updateForce(Particle *particle, real duration) {
-    real depth = particle->getPosition().y;
+    const real depth = particle->getPosition().y;
 
     if (depth >= waterHeight + maxDepth) {
         return; // Out of the water
