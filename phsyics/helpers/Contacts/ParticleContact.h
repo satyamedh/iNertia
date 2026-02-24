@@ -15,12 +15,15 @@ namespace iNertia {
         real restitution; // coefficient of restitution
         Vector3 contactNormal; // direction of contact
 
+        real penetration; // depth of penetration
+
     protected:
         void resolve(real dt);
         real calculateSeparatingVelocity() const;
 
     private:
         void resolveVelocity(real dt);
+        void resolveInterpenetration(real dt);
     };
 }
 
