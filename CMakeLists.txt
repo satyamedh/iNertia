@@ -26,4 +26,6 @@ add_library(iNertia STATIC iNertia.cpp
         phsyics/helpers/ForceTypes/Particle/ParticleBuoyancy.h
         phsyics/helpers/Contacts/ParticleContact.cpp
         phsyics/helpers/Contacts/ParticleContact.h
+        phsyics/helpers/Contacts/ParticleContactResolver.cpp
+        phsyics/helpers/Contacts/ParticleContactResolver.h
 )

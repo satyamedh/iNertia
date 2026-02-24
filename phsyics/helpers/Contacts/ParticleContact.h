@@ -17,9 +17,8 @@ namespace iNertia {
 
         real penetration; // depth of penetration
 
-    protected:
-        void resolve(real dt);
         real calculateSeparatingVelocity() const;
+        void resolve(real dt);
 
     private:
         void resolveVelocity(real dt);
