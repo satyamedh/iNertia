@@ -28,4 +28,10 @@ add_library(iNertia STATIC iNertia.cpp
         phsyics/helpers/Contacts/ParticleContact.h
         phsyics/helpers/Contacts/ParticleContactResolver.cpp
         phsyics/helpers/Contacts/ParticleContactResolver.h
+        phsyics/helpers/Contacts/ParticleLink/ParticleLink.h
+        phsyics/helpers/Contacts/ParticleLink/Links/ParticleCable.cpp
+        phsyics/helpers/Contacts/ParticleLink/Links/ParticleCable.h
+        phsyics/helpers/Contacts/ParticleLink/ParticleLink.cpp
+        phsyics/helpers/Contacts/ParticleLink/Links/ParticleRod.cpp
+        phsyics/helpers/Contacts/ParticleLink/Links/ParticleRod.h
 )
