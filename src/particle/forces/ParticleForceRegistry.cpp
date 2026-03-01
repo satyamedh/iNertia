@@ -2,7 +2,7 @@
 // Created by satyamedh on 26/01/26.
 //
 
-#include "particleForceRegistry.h"
+#include "ParticleForceRegistry.h"
 
 void iNertia::ParticleForceRegistry::add(Particle *p, ParticleForceGen *fg) {
     ParticleForceRegistration registration{};
@@ -29,5 +29,3 @@ void iNertia::ParticleForceRegistry::updateForces(const real dt) {
         pfg->updateForce(particle, dt);
     }
 }
-
-

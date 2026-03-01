@@ -2,10 +2,10 @@
 // Created by satyamedh on 25/02/26.
 //
 
-#ifndef INERTIA_PARTICLELINKS_H
-#define INERTIA_PARTICLELINKS_H
-#include "../ParticleContact.h"
-#include "../../../objects/particle.h"
+#ifndef INERTIA_PARTICLELINK_H
+#define INERTIA_PARTICLELINK_H
+#include "ParticleContact.h"
+#include "particle/Particle.h"
 
 namespace iNertia {
     class ParticleLink {
@@ -20,4 +20,4 @@ namespace iNertia {
     };
 } // iNertia
 
-#endif //INERTIA_PARTICLELINKS_H
+#endif //INERTIA_PARTICLELINK_H

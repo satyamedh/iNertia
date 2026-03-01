@@ -31,5 +31,3 @@ unsigned iNertia::ParticleRod::fillContact(ParticleContact *contact, unsigned li
     contact->restitution = 0; // no bounciness, it's a rod!
     return 1;
 }
-
-

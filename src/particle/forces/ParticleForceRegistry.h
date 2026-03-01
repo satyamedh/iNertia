@@ -6,9 +6,9 @@
 #define INERTIA_PARTICLEFORCEREGISTRY_H
 #include <vector>
 
-#include "../../../maths/precision.h"
-#include "../../objects/particle.h"
-#include "../particleForceGen.h"
+#include "core/precision.h"
+#include "particle/Particle.h"
+#include "ParticleForceGen.h"
 
 
 namespace iNertia {

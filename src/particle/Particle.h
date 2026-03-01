@@ -4,7 +4,7 @@
 
 #ifndef INERTIA_PARTICLE_H
 #define INERTIA_PARTICLE_H
-#include "../../maths/Vector3.h"
+#include "core/Vector3.h"
 
 namespace iNertia {
     class Particle {

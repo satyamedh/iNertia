@@ -1,7 +1,4 @@
 #include "iNertia.h"
 
-#include <iostream>
-
-void hello() {
-    std::cout << "Hello, World!" << std::endl;
-}
+// Library entry point — iNertia is a static library.
+// Consumers should #include <iNertia/iNertia.h>.

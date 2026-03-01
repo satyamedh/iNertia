@@ -4,7 +4,7 @@
 
 #ifndef INERTIA_PARTICLEGRAVITY_H
 #define INERTIA_PARTICLEGRAVITY_H
-#include "../../particleForceGen.h"
+#include "ParticleForceGen.h"
 
 namespace iNertia {
     class ParticleGravity : public ParticleForceGen {

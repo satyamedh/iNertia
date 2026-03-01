@@ -4,7 +4,7 @@
 
 #ifndef INERTIA_PARTICLEBUNGEE_H
 #define INERTIA_PARTICLEBUNGEE_H
-#include "../../particleForceGen.h"
+#include "ParticleForceGen.h"
 
 namespace iNertia {
     class ParticleBungee : public ParticleForceGen{

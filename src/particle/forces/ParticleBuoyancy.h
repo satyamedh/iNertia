@@ -4,7 +4,7 @@
 
 #ifndef INERTIA_PARTICLEBUOYANCY_H
 #define INERTIA_PARTICLEBUOYANCY_H
-#include "../../particleForceGen.h"
+#include "ParticleForceGen.h"
 
 namespace iNertia {
     class ParticleBuoyancy : public ParticleForceGen {

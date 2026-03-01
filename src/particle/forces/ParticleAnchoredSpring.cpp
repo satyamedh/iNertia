@@ -23,5 +23,3 @@ void iNertia::ParticleAnchoredSpring::updateForce(Particle *particle, real durat
     force *= magnitude;
     particle->addForce(force);
 }
-
-

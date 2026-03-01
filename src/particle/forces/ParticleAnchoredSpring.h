@@ -4,7 +4,7 @@
 
 #ifndef INERTIA_PARTICLEANCHOREDSPRING_H
 #define INERTIA_PARTICLEANCHOREDSPRING_H
-#include "../../particleForceGen.h"
+#include "ParticleForceGen.h"
 
 namespace iNertia {
     class ParticleAnchoredSpring : public ParticleForceGen {

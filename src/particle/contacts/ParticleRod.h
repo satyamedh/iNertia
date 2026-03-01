@@ -4,7 +4,7 @@
 
 #ifndef INERTIA_PARTICLEROD_H
 #define INERTIA_PARTICLEROD_H
-#include "../ParticleLink.h"
+#include "ParticleLink.h"
 
 namespace iNertia {
     class ParticleRod : public ParticleLink {

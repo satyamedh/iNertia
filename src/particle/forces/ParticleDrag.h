@@ -4,7 +4,7 @@
 
 #ifndef INERTIA_PARTICLEDRAG_H
 #define INERTIA_PARTICLEDRAG_H
-#include "../../particleForceGen.h"
+#include "ParticleForceGen.h"
 
 namespace iNertia {
     class ParticleDrag : public ParticleForceGen {

@@ -4,7 +4,7 @@
 
 #ifndef INERTIA_PARTICLECABLE_H
 #define INERTIA_PARTICLECABLE_H
-#include "../ParticleLink.h"
+#include "ParticleLink.h"
 
 namespace iNertia {
     class ParticleCable : public ParticleLink{

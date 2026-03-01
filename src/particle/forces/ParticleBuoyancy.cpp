@@ -29,7 +29,4 @@ void iNertia::ParticleBuoyancy::updateForce(Particle *particle, real duration) {
 
     force.y = liquidDensity * volume * (depth - waterHeight - maxDepth) / (2 * maxDepth);
     particle->addForce(force);
-
 }
-
-

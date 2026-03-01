@@ -26,5 +26,3 @@ void iNertia::ParticleBungee::updateForce(Particle *particle, real duration) {
     force *= magnitude;
     particle->addForce(force);
 }
-
-

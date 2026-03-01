@@ -2,11 +2,11 @@
 // Created by satyamedh on 31/01/26.
 //
 
-#ifndef INERTIA_PARTICLECONTACTS_H
-#define INERTIA_PARTICLECONTACTS_H
-#include "../../../maths/precision.h"
-#include "../../../maths/Vector3.h"
-#include "../../objects/particle.h"
+#ifndef INERTIA_PARTICLECONTACT_H
+#define INERTIA_PARTICLECONTACT_H
+#include "core/precision.h"
+#include "core/Vector3.h"
+#include "particle/Particle.h"
 
 namespace iNertia {
     class ParticleContact {
@@ -27,4 +27,4 @@ namespace iNertia {
 }
 
 
-#endif //INERTIA_PARTICLECONTACTS_H
+#endif //INERTIA_PARTICLECONTACT_H

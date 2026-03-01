@@ -27,5 +27,3 @@ void iNertia::ParticleContactResolver::resolveContacts(ParticleContact *contactA
         iterationsUsed++;
     }
 }
-
-

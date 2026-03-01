@@ -2,13 +2,13 @@
 // Created by satyamedh on 26/01/26.
 //
 
-#ifndef INERTIA_IFORCEGEN_H
-#define INERTIA_IFORCEGEN_H
+#ifndef INERTIA_PARTICLEFORCEGEN_H
+#define INERTIA_PARTICLEFORCEGEN_H
 
 #include <vector>
 
-#include "../../maths/precision.h"
-#include "../objects/particle.h"
+#include "core/precision.h"
+#include "particle/Particle.h"
 
 namespace iNertia {
     class ParticleForceGen {
@@ -18,4 +18,4 @@ namespace iNertia {
 }
 
 
-#endif //INERTIA_IFORCEGEN_H
+#endif //INERTIA_PARTICLEFORCEGEN_H
