@@ -28,6 +28,45 @@ namespace iNertia {
                 data[6]*m.data[2] + data[7]*m.data[5] + data[8]*m.data[8]
             };
         }
+
+        // sets THIS matrix to be the inverse of the given matrix
+        void setInverse(const Matrix3 &m) {
+            real t4 = m.data[0]*m.data[4];
+            real t6 = m.data[0]*m.data[5];
+            real t8 = m.data[1]*m.data[3];
+            real t10 = m.data[2]*m.data[3];
+            real t12 = m.data[1]*m.data[6];
+            real t14 = m.data[2]*m.data[6];
+
+            // Calculate the determinant
+            real t16 = (t4*m.data[8] - t6*m.data[7] - t8*m.data[8] + t10*m.data[7] + t12*m.data[5] - t14*m.data[4]);
+
+            // Make sure the determinant is non-zero
+            if (t16 == static_cast<real>(0.0)) return;
+            real invDet = 1.0f/t16;
+
+            data[0] = (m.data[4]*m.data[8] - m.data[5]*m.data[7])*invDet;
+            data[1] = -(m.data[1]*m.data[8] - m.data[2]*m.data[7])*invDet;
+            data[2] = (m.data[1]*m.data[5] - m.data[2]*m.data[4])*invDet;
+            data[3] = -(m.data[3]*m.data[8] - m.data[5]*m.data[6])*invDet;
+            data[4] = (m.data[0]*m.data[8] - t14)*invDet;
+            data[5] = -(t6 - t10)*invDet;
+            data[6] = (m.data[3]*m.data[7] - m.data[4]*m.data[6])*invDet;
+            data[7] = -(m.data[0]*m.data[7] - t12)*invDet;
+            data[8] = (t4 - t8)*invDet;
+        }
+
+        // returns a NEW matrix, inverse of THIS
+        Matrix3 inverse() const {
+            Matrix3 result{};
+            result.setInverse(*this);
+            return result;
+        }
+
+        // Inverses this in place
+        void invert() {
+            setInverse(*this);
+        }
     };
 
     class Matrix4 {
@@ -56,11 +95,63 @@ namespace iNertia {
             result.data[6] = data[4]*m.data[2] + data[5]*m.data[6] + data[6]*m.data[10];
             result.data[10] = data[8]*m.data[2] + data[9]*m.data[6] + data[10]*m.data[10];
 
-            result.data[3] = data[0]*m.data[3] + data[1]*m.data[7] + data[2]*m.data[11] + data[3];
-            result.data[7] = data[4]*m.data[3] + data[5]*m.data[7] + data[6]*m.data[11] + data[7];
-            result.data[11] = data[8]*m.data[3] + data[9]*m.data[7] + data[10]*m.data[11] + data[11];
-
             return result;
+        }
+
+        real getDeterminant() const {
+            return data[8] * data[5] * data[2] +
+                     data[4] * data[9] * data[2] +
+                     data[8] * data[1] * data[6] -
+                     data[0] * data[9] * data[6] -
+                     data[4] * data[1] * data[10] -
+                     data[0] * data[5] * data[10];
+        }
+
+        void setInverse(const Matrix4 &m) {
+            real det = getDeterminant();
+            if (det == 0) return;
+            det = static_cast<real>(1.0)/det;
+
+            data[0] = (-m.data[9]*m.data[6]+m.data[5]*m.data[10])*det;
+            data[4] = (m.data[8]*m.data[6]-m.data[4]*m.data[10])*det;
+            data[8] = (-m.data[8]*m.data[5]+m.data[4]*m.data[9])*det;
+
+            data[1] = (m.data[9]*m.data[2]-m.data[1]*m.data[10])*det;
+            data[5] = (-m.data[8]*m.data[2]+m.data[0]*m.data[10])*det;
+            data[9] = (m.data[8]*m.data[1]-m.data[0]*m.data[9])*det;
+
+            data[2] = (-m.data[5]*m.data[2]+m.data[1]*m.data[6])*det;
+            data[6] = (+m.data[4]*m.data[2]-m.data[0]*m.data[6])*det;
+            data[10] = (-m.data[4]*m.data[1]+m.data[0]*m.data[5])*det;
+
+            data[3] = (m.data[9]*m.data[6]*m.data[3]
+                       -m.data[5]*m.data[10]*m.data[3]
+                       -m.data[9]*m.data[2]*m.data[7]
+                       +m.data[1]*m.data[10]*m.data[7]
+                       +m.data[5]*m.data[2]*m.data[11]
+                       -m.data[1]*m.data[6]*m.data[11])*det;
+            data[7] = (-m.data[8]*m.data[6]*m.data[3]
+                       +m.data[4]*m.data[10]*m.data[3]
+                       +m.data[8]*m.data[2]*m.data[7]
+                       -m.data[0]*m.data[10]*m.data[7]
+                       -m.data[4]*m.data[2]*m.data[11]
+                       +m.data[0]*m.data[6]*m.data[11])*det;
+            data[11] =(m.data[8]*m.data[5]*m.data[3]
+                       -m.data[4]*m.data[9]*m.data[3]
+                       -m.data[8]*m.data[1]*m.data[7]
+                       +m.data[0]*m.data[9]*m.data[7]
+                       +m.data[4]*m.data[1]*m.data[11]
+                       -m.data[0]*m.data[5]*m.data[11])*det;
+        }
+
+        Matrix4 inverse() const {
+            Matrix4 result{};
+            result.setInverse(*this);
+            return result;
+        }
+
+        void invert() {
+            setInverse(*this);
         }
     };
 
