@@ -44,6 +44,7 @@ add_library(iNertia STATIC
         src/particle/contacts/ParticleRod.cpp
         src/particle/contacts/ParticleRod.h
         src/core/Matrix.h
+        src/core/Quaternion.h
 )
 
 target_include_directories(iNertia
