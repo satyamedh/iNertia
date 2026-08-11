@@ -6,6 +6,7 @@
 #define INERTIA_MATRIX3_H
 
 #include "precision.h"
+#include "Quaternion.h"
 #include "Vector3.h"
 
 namespace iNertia {
@@ -88,6 +89,20 @@ namespace iNertia {
 
         void transpose() {
             setTranspose(*this);
+        }
+
+        void setOrientation(const Quaternion &q) {
+            data[0] = 1 - (2 * q.y * q.y + 2 * q.z * q.z);
+            data[1] = 2 * q.x * q.y + 2 * q.z * q.w;
+            data[2] = 2 * q.x * q.z - 2 * q.y * q.w;
+
+            data[3] = 2 * q.x * q.y - 2 * q.z * q.w;
+            data[4] = 1 - (2 * q.x * q.x + 2 * q.z * q.z);
+            data[5] = 2 * q.y * q.z + 2 * q.x * q.w;
+
+            data[6] = 2 * q.x * q.z + 2 * q.y * q.w;
+            data[7] = 2 * q.y * q.z - 2 * q.x * q.w;
+            data[8] = 1 - (2 * q.x * q.x + 2 * q.y * q.y);
         }
 
     };
@@ -175,6 +190,23 @@ namespace iNertia {
 
         void invert() {
             setInverse(*this);
+        }
+
+        void setOrientationAndPosition(const Quaternion &q, const Vector3 &pos) {
+            data[0] = 1 - (2 * q.y * q.y + 2 * q.z * q.z);
+            data[1] = 2 * q.x * q.y + 2 * q.z * q.w;
+            data[2] = 2 * q.x * q.z - 2 * q.y * q.w;
+            data[3] = pos.x;
+
+            data[4] = 2 * q.x * q.y - 2 * q.z * q.w;
+            data[5] = 1 - (2 * q.x * q.x + 2 * q.z * q.z);
+            data[6] = 2 * q.y * q.z + 2 * q.x * q.w;
+            data[7] = pos.y;
+
+            data[8] = 2 * q.x * q.z + 2 * q.y * q.w;
+            data[9] = 2 * q.y * q.z - 2 * q.x * q.w;
+            data[10] = 1 - (2 * q.x * q.x + 2 * q.y * q.y);
+            data[11] = pos.z;
         }
     };
 
