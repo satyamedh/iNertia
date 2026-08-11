@@ -67,6 +67,29 @@ namespace iNertia {
         void invert() {
             setInverse(*this);
         }
+
+        void setTranspose(const Matrix3 &m) {
+            data[0] = m.data[0];
+            data[1] = m.data[3];
+            data[2] = m.data[6];
+            data[3] = m.data[1];
+            data[4] = m.data[4];
+            data[5] = m.data[7];
+            data[6] = m.data[2];
+            data[7] = m.data[5];
+            data[8] = m.data[8];
+        }
+
+        Matrix3 transpose() const {
+            Matrix3 result{};
+            result.setTranspose(*this);
+            return result;
+        }
+
+        void transpose() {
+            setTranspose(*this);
+        }
+
     };
 
     class Matrix4 {
