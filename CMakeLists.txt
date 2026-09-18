@@ -45,6 +45,8 @@ add_library(iNertia STATIC
         src/particle/contacts/ParticleRod.h
         src/core/Matrix.h
         src/core/Quaternion.h
+        src/rigidbody/RigidBody.cpp
+        src/rigidbody/RigidBody.h
 )
 
 target_include_directories(iNertia
