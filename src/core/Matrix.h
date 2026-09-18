@@ -208,6 +208,26 @@ namespace iNertia {
             data[10] = 1 - (2 * q.x * q.x + 2 * q.y * q.y);
             data[11] = pos.z;
         }
+
+
+        Vector3 transformInverse (const Vector3 v) const {
+            Vector3 tmp = v;
+            tmp.x -= data[3];
+            tmp.y -= data[7];
+            tmp.z -= data[11];
+            return {
+                tmp.x * data[0] +
+                tmp.y * data[4] +
+                tmp.z * data[8],
+                tmp.x * data[1] +
+                tmp.y * data[5] +
+                tmp.z * data[9],
+                tmp.x * data[2] +
+                tmp.y * data[6] +
+                tmp.z * data[10]
+            };
+        }
+
     };
 
 }
