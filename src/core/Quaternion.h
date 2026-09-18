@@ -10,7 +10,24 @@
 namespace iNertia {
     class Quaternion {
         public:
-            real w, x, y, z;
+            union {
+                real r;
+                real w;
+            };
+            union {
+                real i;
+                real x;
+            };
+            union {
+                real j;
+                real y;
+            };
+            union {
+                real k;
+                real z;
+            };
+
+
 
             Quaternion(): w(1), x(0), y(0), z(0) {}
             Quaternion(const real w, const real x, const real y, const real z): w(w), x(x), y(y), z(z) {}
