@@ -4,6 +4,8 @@
 // Core math types
 #include "../src/core/precision.h"
 #include "../src/core/Vector3.h"
+#include "../src/core/Quaternion.h"
+#include "../src/core/Matrix.h"
 
 // Particle physics
 #include "../src/particle/Particle.h"
@@ -24,5 +26,8 @@
 #include "../src/particle/contacts/ParticleLink.h"
 #include "../src/particle/contacts/ParticleCable.h"
 #include "../src/particle/contacts/ParticleRod.h"
+
+// Rigidbody physics
+#include "../src/rigidbody/RigidBody.h"
 
 #endif // INERTIA_LIBRARY_H
